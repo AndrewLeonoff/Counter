@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CounterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
