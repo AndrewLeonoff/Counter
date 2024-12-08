@@ -11,12 +11,12 @@ final class CounterViewController: UIViewController {
     
     // MARK: - IB Outlets
     
-    @IBOutlet weak var counterLabel: UILabel!
-    @IBOutlet weak var historyTextView: UITextView!
+    @IBOutlet private weak var counterLabel: UILabel!
+    @IBOutlet private weak var historyTextView: UITextView!
     
-    @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var minusButton: UIButton!
-    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet private weak var plusButton: UIButton!
+    @IBOutlet private weak var minusButton: UIButton!
+    @IBOutlet private weak var resetButton: UIButton!
     
     // MARK: - Private Properties
     
@@ -34,13 +34,13 @@ final class CounterViewController: UIViewController {
     
     // MARK: - IB Actions
     
-    @IBAction func plusButtonPressed() {
+    @IBAction private func plusButtonPressed() {
         counterValue += 1
         counterLabel.text = "Значение счётчика: \(counterValue)"
         historyTextView.text += "\n\(getDate()): значение изменено на +1"
     }
     
-    @IBAction func minusButtonPressed() {
+    @IBAction private func minusButtonPressed() {
         if counterValue != 0 {
             counterValue -= 1
             counterLabel.text = "Значение счётчика: \(counterValue)"
@@ -50,7 +50,7 @@ final class CounterViewController: UIViewController {
         }
     }
     
-    @IBAction func resetButtonPressed() {
+    @IBAction private func resetButtonPressed() {
         counterValue = 0
         counterLabel.text = "Значение счётчика: \(counterValue)"
         historyTextView.text += "\n\(getDate()): значение сброшено"
